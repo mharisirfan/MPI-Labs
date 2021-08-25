@@ -1,0 +1,73 @@
+#include <avr/io.h>
+#define F_CPU 1000000
+#include <util/delay.h>
+#define RS PC0
+#define EN PC1
+
+void lcd_comm (char);
+void lcd_data(char);
+void lcd_init (void);
+
+
+int main(void)
+{
+	lcd_init();
+	lcd_data('H');
+	lcd_data('A');
+	lcd_data('R');
+	lcd_data('I');
+	lcd_data('S');
+  
+	lcd_comm(20);
+	
+	lcd_data('I');
+	lcd_data('R');
+	lcd_data('F');
+	lcd_data('A');
+	lcd_data('N');
+	
+	lcd_comm(192);
+	lcd_data('F');
+	lcd_data('A');
+	lcd_data('1');
+	lcd_data('8');
+	lcd_data('-');
+	lcd_data('B');
+	lcd_data('C');
+	lcd_data('E');
+	lcd_data('-');
+	lcd_data('0');
+	lcd_data('9');
+	lcd_data('0');
+
+	while(1)
+	{
+		
+	}
+}
+
+void lcd_comm(char x){
+	PORTD = x;
+	PORTC &= ~(1<<RS);
+	PORTC |= (1<<EN);
+	_delay_ms(5);
+	PORTC &= ~(1<<EN);
+}
+
+void lcd_data(char x){
+	PORTD = x;
+	PORTC |= (1<<RS);
+	PORTC |= (1<<EN);
+	_delay_ms(5);
+	PORTC &= ~(1<<EN);
+}
+
+void lcd_init(void){
+	DDRD = 0xFF;
+	DDRC = 0x03;
+	lcd_comm(0x38);
+
+	lcd_comm(0x0E);
+	lcd_comm(0x01);
+	lcd_comm(0x80);
+}

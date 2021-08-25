@@ -1,0 +1,39 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>C:\Users\Abdul Ahad\Desktop\6th semester\microprocessors\lab 4\prelab1\prelab1\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\Abdul Ahad\Desktop\6th semester\microprocessors\lab 4\prelab1\prelab1\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\avrasm\inc\m328Pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\Abdul Ahad\Desktop\6th semester\microprocessors\lab 4\prelab1\prelab1\Debug\prelab1.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>prelab1.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>prelab1.map</FILE>
+  <FILE>prelab1.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <start><FILE>C:\Users\Abdul Ahad\Desktop\6th semester\microprocessors\lab 4\prelab1\prelab1\main.asm</FILE><LINE>19</LINE></start>
+  <LCD_Init><FILE>C:\Users\Abdul Ahad\Desktop\6th semester\microprocessors\lab 4\prelab1\prelab1\main.asm</FILE><LINE>82</LINE></LCD_Init>
+  <DisplayNums><FILE>C:\Users\Abdul Ahad\Desktop\6th semester\microprocessors\lab 4\prelab1\prelab1\main.asm</FILE><LINE>115</LINE></DisplayNums>
+  <forever><FILE>C:\Users\Abdul Ahad\Desktop\6th semester\microprocessors\lab 4\prelab1\prelab1\main.asm</FILE><LINE>28</LINE></forever>
+  <delay_1ms><FILE>C:\Users\Abdul Ahad\Desktop\6th semester\microprocessors\lab 4\prelab1\prelab1\main.asm</FILE><LINE>33</LINE></delay_1ms>
+  <L1><FILE>C:\Users\Abdul Ahad\Desktop\6th semester\microprocessors\lab 4\prelab1\prelab1\main.asm</FILE><LINE>37</LINE></L1>
+  <L11><FILE>C:\Users\Abdul Ahad\Desktop\6th semester\microprocessors\lab 4\prelab1\prelab1\main.asm</FILE><LINE>39</LINE></L11>
+  <delay_50ms><FILE>C:\Users\Abdul Ahad\Desktop\6th semester\microprocessors\lab 4\prelab1\prelab1\main.asm</FILE><LINE>50</LINE></delay_50ms>
+  <L2><FILE>C:\Users\Abdul Ahad\Desktop\6th semester\microprocessors\lab 4\prelab1\prelab1\main.asm</FILE><LINE>53</LINE></L2>
+  <LCD_Send_Command><FILE>C:\Users\Abdul Ahad\Desktop\6th semester\microprocessors\lab 4\prelab1\prelab1\main.asm</FILE><LINE>60</LINE></LCD_Send_Command>
+  <LCD_Pulse_En><FILE>C:\Users\Abdul Ahad\Desktop\6th semester\microprocessors\lab 4\prelab1\prelab1\main.asm</FILE><LINE>75</LINE></LCD_Pulse_En>
+  <LCD_Send_Data><FILE>C:\Users\Abdul Ahad\Desktop\6th semester\microprocessors\lab 4\prelab1\prelab1\main.asm</FILE><LINE>68</LINE></LCD_Send_Data>
+  <L3><FILE>C:\Users\Abdul Ahad\Desktop\6th semester\microprocessors\lab 4\prelab1\prelab1\main.asm</FILE><LINE>123</LINE></L3>
+ </LABELS>
+</ASSEMBLER_INFO>

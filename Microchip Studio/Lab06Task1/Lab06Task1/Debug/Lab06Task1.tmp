@@ -1,0 +1,33 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>D:\Documents\Microprocessor\Microchip Studio\Lab06Task1\Lab06Task1\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>D:\Documents\Microprocessor\Microchip Studio\Lab06Task1\Lab06Task1\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\avrasm\inc\m328Pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>D:\Documents\Microprocessor\Microchip Studio\Lab06Task1\Lab06Task1\Debug\Lab06Task1.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Lab06Task1.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Lab06Task1.map</FILE>
+  <FILE>Lab06Task1.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <start><FILE>D:\Documents\Microprocessor\Microchip Studio\Lab06Task1\Lab06Task1\main.asm</FILE><LINE>13</LINE></start>
+  <delay_us_400><FILE>D:\Documents\Microprocessor\Microchip Studio\Lab06Task1\Lab06Task1\main.asm</FILE><LINE>26</LINE></delay_us_400>
+  <delay_us_600><FILE>D:\Documents\Microprocessor\Microchip Studio\Lab06Task1\Lab06Task1\main.asm</FILE><LINE>43</LINE></delay_us_600>
+  <a><FILE>D:\Documents\Microprocessor\Microchip Studio\Lab06Task1\Lab06Task1\main.asm</FILE><LINE>29</LINE></a>
+  <loop2><FILE>D:\Documents\Microprocessor\Microchip Studio\Lab06Task1\Lab06Task1\main.asm</FILE><LINE>32</LINE></loop2>
+  <b><FILE>D:\Documents\Microprocessor\Microchip Studio\Lab06Task1\Lab06Task1\main.asm</FILE><LINE>46</LINE></b>
+  <loop1><FILE>D:\Documents\Microprocessor\Microchip Studio\Lab06Task1\Lab06Task1\main.asm</FILE><LINE>49</LINE></loop1>
+ </LABELS>
+</ASSEMBLER_INFO>

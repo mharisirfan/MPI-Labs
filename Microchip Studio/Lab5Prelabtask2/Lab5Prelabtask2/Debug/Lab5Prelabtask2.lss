@@ -1,0 +1,326 @@
+
+Lab5Prelabtask2.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  00000236  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000001e2  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  00000236  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000268  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000038  00000000  00000000  000002a8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000a95  00000000  00000000  000002e0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000006ef  00000000  00000000  00000d75  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   000003ad  00000000  00000000  00001464  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000054  00000000  00000000  00001814  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000430  00000000  00000000  00001868  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000390  00000000  00000000  00001c98  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000028  00000000  00000000  00002028  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+   8:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+   c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  10:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  14:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  18:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  1c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  20:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  24:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  28:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  2c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  30:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  34:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  38:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  3c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  40:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  44:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  48:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  4c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  50:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  54:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  58:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  5c:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  60:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+  64:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__bad_interrupt>
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+  74:	0e 94 e0 00 	call	0x1c0	; 0x1c0 <main>
+  78:	0c 94 ef 00 	jmp	0x1de	; 0x1de <_exit>
+
+0000007c <__bad_interrupt>:
+  7c:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000080 <_Z16LCD_Send_Commandh>:
+	_delay_ms(2);
+}
+void LCD_Send_Command( unsigned char comm )
+{
+	
+	PORTC &=~(1<<PC0);
+  80:	98 b1       	in	r25, 0x08	; 8
+  82:	9e 7f       	andi	r25, 0xFE	; 254
+  84:	98 b9       	out	0x08, r25	; 8
+	PORTD = (PORTD & 0x0F);  
+  86:	9b b1       	in	r25, 0x0b	; 11
+  88:	9f 70       	andi	r25, 0x0F	; 15
+  8a:	9b b9       	out	0x0b, r25	; 11
+	PORTD = (comm>>4); 
+  8c:	28 2f       	mov	r18, r24
+  8e:	30 e0       	ldi	r19, 0x00	; 0
+  90:	35 95       	asr	r19
+  92:	27 95       	ror	r18
+  94:	35 95       	asr	r19
+  96:	27 95       	ror	r18
+  98:	35 95       	asr	r19
+  9a:	27 95       	ror	r18
+  9c:	35 95       	asr	r19
+  9e:	27 95       	ror	r18
+  a0:	2b b9       	out	0x0b, r18	; 11
+	PORTC |= (1<<PC1);
+  a2:	98 b1       	in	r25, 0x08	; 8
+  a4:	92 60       	ori	r25, 0x02	; 2
+  a6:	98 b9       	out	0x08, r25	; 8
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  a8:	e3 ef       	ldi	r30, 0xF3	; 243
+  aa:	f1 e0       	ldi	r31, 0x01	; 1
+  ac:	31 97       	sbiw	r30, 0x01	; 1
+  ae:	f1 f7       	brne	.-4      	; 0xac <_Z16LCD_Send_Commandh+0x2c>
+  b0:	00 c0       	rjmp	.+0      	; 0xb2 <_Z16LCD_Send_Commandh+0x32>
+  b2:	00 00       	nop
+	_delay_ms(2);
+	PORTC &=~(1<<PC1);
+  b4:	98 b1       	in	r25, 0x08	; 8
+  b6:	9d 7f       	andi	r25, 0xFD	; 253
+  b8:	98 b9       	out	0x08, r25	; 8
+  ba:	e7 ea       	ldi	r30, 0xA7	; 167
+  bc:	f1 e6       	ldi	r31, 0x61	; 97
+  be:	31 97       	sbiw	r30, 0x01	; 1
+  c0:	f1 f7       	brne	.-4      	; 0xbe <_Z16LCD_Send_Commandh+0x3e>
+  c2:	00 c0       	rjmp	.+0      	; 0xc4 <_Z16LCD_Send_Commandh+0x44>
+  c4:	00 00       	nop
+	
+	_delay_ms(100);
+	PORTD = (comm & 0x0F);
+  c6:	8f 70       	andi	r24, 0x0F	; 15
+  c8:	8b b9       	out	0x0b, r24	; 11
+	PORTC |= (1<<PC1);
+  ca:	88 b1       	in	r24, 0x08	; 8
+  cc:	82 60       	ori	r24, 0x02	; 2
+  ce:	88 b9       	out	0x08, r24	; 8
+  d0:	83 ef       	ldi	r24, 0xF3	; 243
+  d2:	91 e0       	ldi	r25, 0x01	; 1
+  d4:	01 97       	sbiw	r24, 0x01	; 1
+  d6:	f1 f7       	brne	.-4      	; 0xd4 <_Z16LCD_Send_Commandh+0x54>
+  d8:	00 c0       	rjmp	.+0      	; 0xda <_Z16LCD_Send_Commandh+0x5a>
+  da:	00 00       	nop
+	_delay_ms(2);
+	PORTC &=~(1<<PC1);
+  dc:	88 b1       	in	r24, 0x08	; 8
+  de:	8d 7f       	andi	r24, 0xFD	; 253
+  e0:	88 b9       	out	0x08, r24	; 8
+  e2:	08 95       	ret
+
+000000e4 <_Z8LCD_initv>:
+	}
+
+}
+void LCD_init ()
+{
+	DDRD = 0xFF;
+  e4:	8f ef       	ldi	r24, 0xFF	; 255
+  e6:	8a b9       	out	0x0a, r24	; 10
+	DDRC = 0xFF;
+  e8:	87 b9       	out	0x07, r24	; 7
+	DDRB = 0x00; // 
+  ea:	14 b8       	out	0x04, r1	; 4
+	PORTB = 0xFF; // For pull up
+  ec:	85 b9       	out	0x05, r24	; 5
+  ee:	87 ea       	ldi	r24, 0xA7	; 167
+  f0:	91 e6       	ldi	r25, 0x61	; 97
+  f2:	01 97       	sbiw	r24, 0x01	; 1
+  f4:	f1 f7       	brne	.-4      	; 0xf2 <_Z8LCD_initv+0xe>
+  f6:	00 c0       	rjmp	.+0      	; 0xf8 <_Z8LCD_initv+0x14>
+  f8:	00 00       	nop
+	_delay_ms(100);
+
+
+	LCD_Send_Command(0x02);
+  fa:	82 e0       	ldi	r24, 0x02	; 2
+  fc:	0e 94 40 00 	call	0x80	; 0x80 <_Z16LCD_Send_Commandh>
+ 100:	83 ef       	ldi	r24, 0xF3	; 243
+ 102:	91 e0       	ldi	r25, 0x01	; 1
+ 104:	01 97       	sbiw	r24, 0x01	; 1
+ 106:	f1 f7       	brne	.-4      	; 0x104 <_Z8LCD_initv+0x20>
+ 108:	00 c0       	rjmp	.+0      	; 0x10a <_Z8LCD_initv+0x26>
+ 10a:	00 00       	nop
+	_delay_ms(2);
+	LCD_Send_Command(0x28);
+ 10c:	88 e2       	ldi	r24, 0x28	; 40
+ 10e:	0e 94 40 00 	call	0x80	; 0x80 <_Z16LCD_Send_Commandh>
+ 112:	83 ef       	ldi	r24, 0xF3	; 243
+ 114:	91 e0       	ldi	r25, 0x01	; 1
+ 116:	01 97       	sbiw	r24, 0x01	; 1
+ 118:	f1 f7       	brne	.-4      	; 0x116 <_Z8LCD_initv+0x32>
+ 11a:	00 c0       	rjmp	.+0      	; 0x11c <_Z8LCD_initv+0x38>
+ 11c:	00 00       	nop
+	_delay_ms(2);
+	LCD_Send_Command(0x0C);
+ 11e:	8c e0       	ldi	r24, 0x0C	; 12
+ 120:	0e 94 40 00 	call	0x80	; 0x80 <_Z16LCD_Send_Commandh>
+ 124:	83 ef       	ldi	r24, 0xF3	; 243
+ 126:	91 e0       	ldi	r25, 0x01	; 1
+ 128:	01 97       	sbiw	r24, 0x01	; 1
+ 12a:	f1 f7       	brne	.-4      	; 0x128 <_Z8LCD_initv+0x44>
+ 12c:	00 c0       	rjmp	.+0      	; 0x12e <_Z8LCD_initv+0x4a>
+ 12e:	00 00       	nop
+	_delay_ms(2);
+	LCD_Send_Command(0x06);
+ 130:	86 e0       	ldi	r24, 0x06	; 6
+ 132:	0e 94 40 00 	call	0x80	; 0x80 <_Z16LCD_Send_Commandh>
+ 136:	83 ef       	ldi	r24, 0xF3	; 243
+ 138:	91 e0       	ldi	r25, 0x01	; 1
+ 13a:	01 97       	sbiw	r24, 0x01	; 1
+ 13c:	f1 f7       	brne	.-4      	; 0x13a <_Z8LCD_initv+0x56>
+ 13e:	00 c0       	rjmp	.+0      	; 0x140 <_Z8LCD_initv+0x5c>
+ 140:	00 00       	nop
+	_delay_ms(2);
+	LCD_Send_Command(0x01);
+ 142:	81 e0       	ldi	r24, 0x01	; 1
+ 144:	0e 94 40 00 	call	0x80	; 0x80 <_Z16LCD_Send_Commandh>
+ 148:	83 ef       	ldi	r24, 0xF3	; 243
+ 14a:	91 e0       	ldi	r25, 0x01	; 1
+ 14c:	01 97       	sbiw	r24, 0x01	; 1
+ 14e:	f1 f7       	brne	.-4      	; 0x14c <_Z8LCD_initv+0x68>
+ 150:	00 c0       	rjmp	.+0      	; 0x152 <_Z8LCD_initv+0x6e>
+ 152:	00 00       	nop
+ 154:	08 95       	ret
+
+00000156 <_Z13LCD_Send_Datah>:
+}
+
+void LCD_Send_Data( unsigned char data )
+{
+	
+	PORTC |=(1<<PC0);
+ 156:	98 b1       	in	r25, 0x08	; 8
+ 158:	91 60       	ori	r25, 0x01	; 1
+ 15a:	98 b9       	out	0x08, r25	; 8
+	PORTD = (PORTD & 0x0F); 
+ 15c:	9b b1       	in	r25, 0x0b	; 11
+ 15e:	9f 70       	andi	r25, 0x0F	; 15
+ 160:	9b b9       	out	0x0b, r25	; 11
+	PORTD = (data>>4); 
+ 162:	28 2f       	mov	r18, r24
+ 164:	30 e0       	ldi	r19, 0x00	; 0
+ 166:	35 95       	asr	r19
+ 168:	27 95       	ror	r18
+ 16a:	35 95       	asr	r19
+ 16c:	27 95       	ror	r18
+ 16e:	35 95       	asr	r19
+ 170:	27 95       	ror	r18
+ 172:	35 95       	asr	r19
+ 174:	27 95       	ror	r18
+ 176:	2b b9       	out	0x0b, r18	; 11
+	PORTC |= (1<<PC1);
+ 178:	98 b1       	in	r25, 0x08	; 8
+ 17a:	92 60       	ori	r25, 0x02	; 2
+ 17c:	98 b9       	out	0x08, r25	; 8
+ 17e:	e3 ef       	ldi	r30, 0xF3	; 243
+ 180:	f1 e0       	ldi	r31, 0x01	; 1
+ 182:	31 97       	sbiw	r30, 0x01	; 1
+ 184:	f1 f7       	brne	.-4      	; 0x182 <_Z13LCD_Send_Datah+0x2c>
+ 186:	00 c0       	rjmp	.+0      	; 0x188 <_Z13LCD_Send_Datah+0x32>
+ 188:	00 00       	nop
+	_delay_ms(2);
+	PORTC &=~(1<<PC1);
+ 18a:	98 b1       	in	r25, 0x08	; 8
+ 18c:	9d 7f       	andi	r25, 0xFD	; 253
+ 18e:	98 b9       	out	0x08, r25	; 8
+ 190:	e7 ea       	ldi	r30, 0xA7	; 167
+ 192:	f1 e6       	ldi	r31, 0x61	; 97
+ 194:	31 97       	sbiw	r30, 0x01	; 1
+ 196:	f1 f7       	brne	.-4      	; 0x194 <_Z13LCD_Send_Datah+0x3e>
+ 198:	00 c0       	rjmp	.+0      	; 0x19a <_Z13LCD_Send_Datah+0x44>
+ 19a:	00 00       	nop
+	
+	_delay_ms(100);
+
+	PORTD = (PORTD & 0xF0);
+ 19c:	9b b1       	in	r25, 0x0b	; 11
+ 19e:	90 7f       	andi	r25, 0xF0	; 240
+ 1a0:	9b b9       	out	0x0b, r25	; 11
+	PORTD = (data & 0x0F);
+ 1a2:	8f 70       	andi	r24, 0x0F	; 15
+ 1a4:	8b b9       	out	0x0b, r24	; 11
+	PORTC |= (1<<PC1);
+ 1a6:	88 b1       	in	r24, 0x08	; 8
+ 1a8:	82 60       	ori	r24, 0x02	; 2
+ 1aa:	88 b9       	out	0x08, r24	; 8
+ 1ac:	83 ef       	ldi	r24, 0xF3	; 243
+ 1ae:	91 e0       	ldi	r25, 0x01	; 1
+ 1b0:	01 97       	sbiw	r24, 0x01	; 1
+ 1b2:	f1 f7       	brne	.-4      	; 0x1b0 <_Z13LCD_Send_Datah+0x5a>
+ 1b4:	00 c0       	rjmp	.+0      	; 0x1b6 <_Z13LCD_Send_Datah+0x60>
+ 1b6:	00 00       	nop
+	_delay_ms(2);
+	PORTC &=~(1<<PC1);
+ 1b8:	88 b1       	in	r24, 0x08	; 8
+ 1ba:	8d 7f       	andi	r24, 0xFD	; 253
+ 1bc:	88 b9       	out	0x08, r24	; 8
+ 1be:	08 95       	ret
+
+000001c0 <main>:
+void LCD_Send_Command( unsigned char comm );
+void LCD_init ();
+
+int main()
+{
+	LCD_init();
+ 1c0:	0e 94 72 00 	call	0xe4	; 0xe4 <_Z8LCD_initv>
+	while (1)
+	{	
+		LCD_Send_Data(PINB);
+ 1c4:	83 b1       	in	r24, 0x03	; 3
+ 1c6:	0e 94 ab 00 	call	0x156	; 0x156 <_Z13LCD_Send_Datah>
+ 1ca:	2f e3       	ldi	r18, 0x3F	; 63
+ 1cc:	82 e4       	ldi	r24, 0x42	; 66
+ 1ce:	9f e0       	ldi	r25, 0x0F	; 15
+ 1d0:	21 50       	subi	r18, 0x01	; 1
+ 1d2:	80 40       	sbci	r24, 0x00	; 0
+ 1d4:	90 40       	sbci	r25, 0x00	; 0
+ 1d6:	e1 f7       	brne	.-8      	; 0x1d0 <main+0x10>
+ 1d8:	00 c0       	rjmp	.+0      	; 0x1da <main+0x1a>
+ 1da:	00 00       	nop
+ 1dc:	f3 cf       	rjmp	.-26     	; 0x1c4 <main+0x4>
+
+000001de <_exit>:
+ 1de:	f8 94       	cli
+
+000001e0 <__stop_program>:
+ 1e0:	ff cf       	rjmp	.-2      	; 0x1e0 <__stop_program>

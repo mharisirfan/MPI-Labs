@@ -1,0 +1,32 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>D:\Documents\Microprocessor\Microchip Studio\prelabTask6\prelabTask6\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>D:\Documents\Microprocessor\Microchip Studio\prelabTask6\prelabTask6\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.6.364\avrasm\inc\m328Pdef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>D:\Documents\Microprocessor\Microchip Studio\prelabTask6\prelabTask6\Debug\prelabTask6.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>prelabTask6.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>prelabTask6.map</FILE>
+  <FILE>prelabTask6.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <start><FILE>D:\Documents\Microprocessor\Microchip Studio\prelabTask6\prelabTask6\main.asm</FILE><LINE>13</LINE></start>
+  <delay_ms_100><FILE>D:\Documents\Microprocessor\Microchip Studio\prelabTask6\prelabTask6\main.asm</FILE><LINE>42</LINE></delay_ms_100>
+  <delay_ms><FILE>D:\Documents\Microprocessor\Microchip Studio\prelabTask6\prelabTask6\main.asm</FILE><LINE>25</LINE></delay_ms>
+  <a><FILE>D:\Documents\Microprocessor\Microchip Studio\prelabTask6\prelabTask6\main.asm</FILE><LINE>29</LINE></a>
+  <loop><FILE>D:\Documents\Microprocessor\Microchip Studio\prelabTask6\prelabTask6\main.asm</FILE><LINE>31</LINE></loop>
+  <loop1><FILE>D:\Documents\Microprocessor\Microchip Studio\prelabTask6\prelabTask6\main.asm</FILE><LINE>45</LINE></loop1>
+ </LABELS>
+</ASSEMBLER_INFO>
